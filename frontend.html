@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🔒 SSL & URL Info Checker</title>
+  <style>
+    body { font-family: Arial; max-width: 600px; margin: 50px auto; text-align: center; }
+    input { width: 80%; padding: 10px; font-size: 15px; }
+    button { padding: 10px 15px; font-size: 15px; margin-top: 10px; }
+    .result { margin-top: 20px; padding: 15px; border-radius: 10px; background: #f9f9f9; border: 1px solid #ddd; text-align: left; }
+    .valid { color: green; font-weight: bold; }
+    .invalid { color: red; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>🔍 SSL & URL Information Checker</h2>
+  <input id="url" placeholder="Enter a URL (e.g., example.com)" />
+  <br>
+  <button id="checkBtn">Check</button>
+  <div id="result" class="result" style="display: none;"></div>
+
+  <script>
+    async function checkUrl() {
+      const url = document.getElementById("url").value.trim();
+      if (!url) return alert("Please enter a URL");
+
+      const resBox = document.getElementById("result");
+      resBox.style.display = "block";
+      resBox.innerHTML = "Checking...";
+
+      try {
+        const res = await fetch("http://localhost:5000/scan", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ url }),
+        });
+        const data = await res.json();
+
+        if (res.ok) {
+          resBox.innerHTML = `
+            <b>URL:</b> ${data.url}<br>
+            <b>Protocol:</b> ${data.protocol}<br>
+            <b>Domain:</b> ${data.domain}<br>
+            <b>URL Length:</b> ${data.url_length} characters<br>
+            <b>SSL Certificate:</b> ${data.ssl_valid ? '<span class="valid">Valid ✅</span>' : '<span class="invalid">Invalid ❌</span>'}
+          `;
+        } else {
+          resBox.innerHTML = `<b>Error:</b> ${data.error}`;
+        }
+      } catch (e) {
+        resBox.innerHTML = `<b>Failed to connect to backend:</b> ${e.message}`;
+      }
+    }
+
+    document.getElementById("checkBtn").addEventListener("click", checkUrl);
+
+    document.getElementById("url").addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        checkUrl();
+      }
+    });
+  </script>
+</body>
+</html>
