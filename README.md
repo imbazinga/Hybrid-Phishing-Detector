@@ -87,7 +87,7 @@ hybrid-phishing-detector/
 ### Step 1: Clone the Repository
 ```bash
 git clone https://github.com/imbazinga/Hybrid-Phishing-Detector
-cd hybrid-phishing-detector
+cd Hybrid-phishing-detector
 ```
 Due to GitHub size limits, the trained models are available here:
 ([link](https://drive.google.com/drive/folders/1xbJlBKJ1fNGMUBKkZDDYE-2hwVOP6mlj?usp=drive_link))
