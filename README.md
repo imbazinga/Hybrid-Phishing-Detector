@@ -1,1 +1,1 @@
-# Hybrid-Phishing-Detector
+# Hybrid Phishing Detector
