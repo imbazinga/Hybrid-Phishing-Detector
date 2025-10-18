@@ -86,9 +86,11 @@ hybrid-phishing-detector/
 ## Setup & Usage
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/hybrid-phishing-detector.git
+git clone https://github.com/imbazinga/Hybrid-Phishing-Detector
 cd hybrid-phishing-detector
 ```
+Due to GitHub size limits, the trained models are available here:
+([link](https://drive.google.com/drive/folders/1xbJlBKJ1fNGMUBKkZDDYE-2hwVOP6mlj?usp=drive_link))
 
 ### Step 2: Install the Dependencies
 ```bash
@@ -113,7 +115,8 @@ Open **frontend/frontend.html** and enter any URL to scan (for example: google.c
 - Frontend: HTML, CSS, JavaScript
 - Libraries: NumPy, Pandas, Requests, Joblib
 
+## Contributions
+Contributions to the FishBot project are welcome! If you have any ideas for improvements, bug fixes, or new features, feel free to submit a pull request or open an issue.
+
 ## License
 This project is licensed under the MIT License. See `LICENSE` file for more details.
-
-
