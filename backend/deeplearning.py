@@ -10,7 +10,7 @@ from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.callbacks import LearningRateScheduler, EarlyStopping
 
 # Load your preprocessed dataset
-data = pd.read_csv("C:\\Users\\karki\\Desktop\\SIH2\\phishing_site_urls.csv", encoding='latin1')
+data = pd.read_csv("phishing_site_urls.csv", encoding='latin1')
 
 # Drop rows with NaN values in the target variable 'Label'
 data = data.dropna(subset=['Label'])
@@ -72,3 +72,4 @@ print(classification_report(y_test, y_pred_hybrid))
 
 # Save the trained model
 hybrid_model.save('hybrid_model_new.keras')
+
