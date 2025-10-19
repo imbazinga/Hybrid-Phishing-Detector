@@ -39,5 +39,6 @@ def scan_url():
     return jsonify(result)
 
 if __name__ == "__main__":
-    print("✅ Server running at http://localhost:5000")
+    print("Server running at http://localhost:5000")
     app.run(debug=True, port=5000)
+
