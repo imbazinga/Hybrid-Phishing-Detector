@@ -16,7 +16,7 @@ from sklearn.utils import class_weight
 from sklearn.decomposition import TruncatedSVD
 
 # Load your preprocessed dataset
-data = pd.read_csv("C:\\Users\\karki\\Desktop\\SIH2\\phishing_site_urls.csv", encoding='latin1')
+data = pd.read_csv("phishing_site_urls.csv", encoding='latin1')
 
 # Drop rows with NaN values in the target variable 'Label'
 data = data.dropna(subset=['Label'])
@@ -115,3 +115,4 @@ joblib.dump(ensemble, 'ensemble_model.pkl')
 # Total test accuracy
 total_test_accuracy = (accuracy_hybrid + accuracy_ensemble) / 2
 print(f"Total Test Accuracy (Deep Learning + Ensemble): {total_test_accuracy}")
+
