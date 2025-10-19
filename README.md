@@ -1,7 +1,7 @@
 # FishBot
 ### Create an intelligent system using AI/ML to detect phishing domains which imitate look and feel of genuine domains (SIH 2023 Problem Statement - 1454).
 
-An AI/ML-Based System for Detecting Phishing Domains
+An AI/ML-Based System for Detecting Phishing Domains.
 
 ## Overview
 **FishBot** is a cybersecurity project created during the **Smart India Hackathon (SIH)**. The system automatically detects **phishing websites** that mimic the appearance of legitimate domains. It uses a mix of **Machine Learning (ML)** and **Deep Learning (DL)** models, along with **SSL certificate validation**.
