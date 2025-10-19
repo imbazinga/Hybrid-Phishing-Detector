@@ -96,6 +96,7 @@ Due to GitHub size limits, the trained models are available here:
 ```bash
 pip install -r requirements.txt
 ```
+Before training or running the system, make sure the file **phishing_site_urls.csv** is placed in the same folder as the training script or inside the project root directory. The script will automatically load it from there.
 
 ### Step 3: Run the Backend
 ```bash
